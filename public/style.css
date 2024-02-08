@@ -1,0 +1,345 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	/* background-color: #4e697d; */
+	background: linear-gradient(-46deg, #c957e7, #6a5df9, #1a75f0);
+	font-family: "Open Sans", sans-serif;
+}
+
+/* NAV STUFF */
+.navigator {
+	background-color: #000f18;
+	color: #c7d5e0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	font-weight: normal;
+	text-align: center;
+
+	margin-bottom: 20px;
+}
+
+.logo {
+	position: relative;
+	height: 28px;
+	right: 5px;
+}
+
+.nav-title {
+	position: relative;
+	font-size: 22px;
+}
+
+/* PAGE STUFF */
+.item-display {
+	grid-area: item-display;
+}
+
+.input-fields {
+	grid-area: input-fields;
+}
+
+.page {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: "item-display input-fields";
+}
+/* MODAL STUFF */
+.flex-modals {
+	display: flex;
+	align-items: top;
+	justify-content: center;
+
+	font-weight: normal;
+	text-align: left;
+
+	padding: 25px;
+	padding-left: 20px;
+}
+
+.column {
+	flex-direction: column;
+}
+
+.modal {
+	background-color: rgb(42 71 94 / 30%);
+	vertical-align: middle;
+
+	border-radius: 10px;
+	box-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
+
+	width: 100%;
+	padding-right: 20px;
+	padding-left: 20px;
+	margin-bottom: 20px;
+}
+
+.modal-header {
+	color: #c7d5e0;
+	font-weight: normal;
+	font-size: 16px;
+}
+
+.items {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.item {
+	border-bottom: 2px solid #ddb892;
+	display: grid;
+
+	padding: 10px 0;
+
+	grid-template-columns: 1fr 8fr 1fr;
+	grid-template-areas:
+		"quantity title   price"
+		"quantity options price";
+
+	row-gap: 8px;
+}
+
+.item:last-child {
+	border-bottom: none;
+}
+
+.item-quantity {
+	grid-area: quantity;
+	color: #c7d5e0;
+}
+
+.item-title {
+	grid-area: title;
+	color: #c7d5e0;
+}
+
+.item-price {
+	grid-area: price;
+	font-weight: bold;
+	color: #9ca7af;
+}
+
+.item-options-list {
+	grid-area: options;
+
+	color: #c7d5e0;
+
+	font-weight: bold;
+	font-size: 14px;
+
+	list-style-type: none;
+}
+
+/* USER INPUT STUFF */
+.input-group {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+
+.input-label {
+	background-color: #4a52a7;
+	/* background-color: linear-gradient(-46deg, #c957e7, #6a5df9, #1a75f0); */
+	color: #c7d5e0;
+	border-radius: 20px;
+	font-size: 11px;
+	position: absolute;
+	left: 25px;
+	top: -7px;
+	padding: 0 5px;
+}
+
+.input-box {
+	border-color: rgb(42 71 94 / 30%);
+	padding: 8px;
+	border-radius: 20px;
+	background-color: rgb(42 71 94 / 30%);
+	/* old background colour background-color: #2a475e; */
+	margin-bottom: 20px;
+	width: 100%;
+	color: #c7d5e0;
+}
+
+.input-box::placeholder {
+	color: #7e888f;
+}
+
+/* GAME CARD STUFF */
+.game-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+	gap: 0.4rem;
+	margin-top: 1rem;
+	margin-left: 1.5rem;
+	margin-right: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.card {
+	padding: 0.5rem;
+
+	background-color: rgb(42 71 94 / 30%);
+	/* vertical-align: middle; */
+
+	border-radius: 10px;
+	box-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
+
+	padding: 25px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.card > .header-button {
+	color: #c7d5e0;
+	font-weight: normal;
+	font-size: 16px;
+	vertical-align: middle;
+}
+
+.card-button {
+	color: #c7d5e0;
+	font: inherit;
+	font-weight: normal;
+	font-size: 16px;
+	vertical-align: middle;
+	background: none;
+	outline: none;
+	border: none;
+	padding: 0;
+
+	cursor: pointer;
+}
+
+.card-button:hover {
+	text-decoration: underline;
+}
+
+.card-button:focus {
+	outline: #c7d5e0 auto 5px;
+}
+
+.hide {
+	display: none;
+}
+
+.shown {
+	display: block;
+}
+
+/* Loading icon from https://loading.io/css/ */
+.centre {
+	display: flex;
+	justify-content: center;
+}
+.lds-circle {
+	margin: 1px;
+	display: inline-block;
+	transform: translateZ(1px);
+}
+
+.lds-circle > div {
+	display: inline-block;
+	width: 64px;
+	height: 64px;
+	margin: 8px;
+	border-radius: 50%;
+	background: #c7d5e0;
+	animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+@keyframes lds-circle {
+	0%,
+	100% {
+		animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+	}
+	0% {
+		transform: rotateY(0deg);
+	}
+	50% {
+		transform: rotateY(1800deg);
+		animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+	}
+	100% {
+		transform: rotateY(3600deg);
+	}
+}
+
+/* adapted from sm64dle on wradion.dev*/
+.output {
+	color: #0c0;
+	animation: shine-colours 1s alternate infinite ease-in-out,
+		keep-div-fixed 1s forwards;
+}
+
+@keyframes shine-colours {
+	0% {
+		color: red;
+		font-size: 2em;
+	}
+
+	20% {
+		color: orange;
+	}
+
+	40% {
+		color: yellow;
+	}
+
+	60% {
+		color: greenyellow;
+	}
+
+	80% {
+		color: lightskyblue;
+	}
+
+	to {
+		color: magenta;
+	}
+}
+
+@keyframes keep-div-fixed {
+	0% {
+		height: 0px;
+		opacity: 0;
+	}
+
+	to {
+		height: 100px;
+		opacity: 1;
+	}
+}
+
+/* FOOTER STUFF */
+.footer {
+	background: linear-gradient(-46deg, #c957e7, #6a5df9, #1a75f0);
+	display: flex;
+	position: fixed;
+	bottom: 0;
+	height: 4.5rem;
+	width: 100%;
+
+	background-repeat: repeat;
+	background-attachment: scroll;
+	background-position: 0% 0%;
+}
+.confirmation-button {
+	align-items: flex-end;
+	display: flex;
+	justify-content: center;
+}
+
+.confirmation-button-2 {
+	position: relative;
+	width: 20rem;
+}
+
+.confirmation-button-2:disabled {
+	background-color: rgba(146, 161, 177, 0.734);
+}

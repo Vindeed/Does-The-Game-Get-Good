@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Does the steam game get good?</title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="icon" type="image/x-icon" href="images/steam_logo.png" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+
+	<body>
+		<nav class="navigator">
+			<img class="logo" src="images/steam_logo.png" alt="steam logo" />
+			<h2 class="nav-title">Does the game get good?</h2>
+		</nav>
+
+		<div class="page">
+			<div class="flex-modals item-display">
+				<div class="modal">
+					<h2 class="modal-header">Search for a game to</h2>
+					<ul class="items">
+						<li class="item">
+							<div class="item-quantity">find</div>
+							<div class="item-title">out</div>
+							<div class="item-price"></div>
+							<ul class="item-options-list">
+								<li>if a game gets better over time</li>
+								<li>by analysing over 900 reviews.</li>
+								<li></li>
+								<li></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="flex-modals input-fields column">
+				<div class="modal">
+					<h2 class="modal-header">GAME NAME</h2>
+					<div class="input-group">
+						<label for="example" class="input-label">
+							Name of game (exact for now)
+						</label>
+						<input
+							id="gameName"
+							class="input-box gameName"
+							placeholder="try typing here"
+						/>
+					</div>
+				</div>
+				<div class="modal">
+					<h2 class="modal-header">
+						NUMBER OF HOURS UNTIL GETS GOOD?
+					</h2>
+					<div class="input-group">
+						<label for="example" class="input-label">
+							Hours until
+						</label>
+						<input
+							id="numHours"
+							class="input-box numHours"
+							placeholder="try typing here"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="game-cards" data-game-cards-container></div>
+
+		<div class="output-text" output-container></div>
+
+		<div class="templates">
+			<template data-game-template>
+				<div class="card">
+					<button class="card-button" data-header></button>
+					<h2 class="header-button" data-appid></h2>
+				</div>
+			</template>
+
+			<template loading-circle-template>
+				<div class="centre">
+					<div class="lds-circle">
+						<div></div>
+					</div>
+				</div>
+			</template>
+			<template output-text-template>
+				<div class="centre">
+					<div class="output" output-text></div>
+				</div>
+			</template>
+		</div>
+
+		<footer class="footer">
+			<div class="input-group confirmation-button">
+				<div search-button>
+					<button
+						id="searchButton"
+						class="input-box confirmation-button-2"
+						disabled
+					>
+						Does it get good?
+					</button>
+				</div>
+			</div>
+		</footer>
+
+		<script src="index.js" async defer></script>
+	</body>
+</html>
