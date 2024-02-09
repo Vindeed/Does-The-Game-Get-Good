@@ -50,6 +50,9 @@ class ReviewAnalyzer {
 			10;
 		const analysisKey = Math.round(analysisKeyDecimal);
 
+		console.log(`Score above hours: ${this.getAverageScoreAboveHours()}`);
+		console.log(`Score below hours: ${this.getAverageScoreBelowHours()}`);
+
 		if (analysisKey < 10) {
 			return analysisMessages[analysisKey];
 		}
@@ -321,6 +324,7 @@ function showOutputMessage(gameReviewAnalyzer) {
 
 function analysisMessageObject() {
 	const analysisMessages = {
+		0: "the games gets better, but by the slightest of slight margin",
 		1: "the games gets better, but by the slightest margin",
 		2: "the game gets better, but not by much",
 		3: "the game gets better",
